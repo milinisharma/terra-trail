@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Discover Places</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/places/tabs/offers/new">
+        <ion-icon name="add" class="ion-icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <h2> Featured </h2>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> {{ places[0].title }} </ion-card-title>
+            <ion-card-subtitle>
+              &#8377; {{places[0].price}} for two
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-img [src]="places[0].imgUrl"></ion-img>
+          <ion-card-content>
+            <p> {{places[0].imgUrl }} </p>
+          </ion-card-content>
+          <ion-button fill="clear" color="warning" class="ion-text-right" [routerLink]="['/', 'places', 'tabs', 'discover', 'places[0].id']" routerDirection="forward">View more</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-list>
+          @for (place of places.slice(1); track $index) {
+            <ion-item [routerLink]="['/', 'places', 'tabs', 'discover', 'place.id']">
+              <ion-thumbnail slot="start">
+                <ion-img [src]="place.imgUrl"></ion-img>
+              </ion-thumbnail>
+              <ion-label>
+                <h2> {{place.title}} </h2>
+                <p> {{place.description}} </p>
+              </ion-label>
+            </ion-item>
+          }
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

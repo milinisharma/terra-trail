@@ -1,0 +1,47 @@
+<ion-app>
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="ion-text-start">Book My Place</ion-title>
+        <ion-button slot="end" fill="clear" (click)="closeMenu()">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle contentId="main-content">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon name="business" slot="start" color="warning"></ion-icon>
+            <ion-label>Discover Places</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle contentId="main-content">
+          <ion-item lines="none" routerLink="/bookings">
+            <ion-icon name="bookmarks-outline" slot="start" color="warning"></ion-icon>
+            <ion-label>My Bookings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle contentId="main-content">
+          <ion-item lines="none" routerLink="/pictures">
+            <ion-icon name="image-outline" slot="start" color="warning"></ion-icon>
+            <ion-label>Pictures</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle contentId="main-content">
+          <ion-item lines="none" routerLink="/locations">
+            <ion-icon name="navigate-outline" slot="start" color="warning"></ion-icon>
+            <ion-label>Locations</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle contentId="main-content">
+          <ion-item lines="none" (click)="logout()">
+            <ion-icon name="exit" slot="start" color="warning"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
