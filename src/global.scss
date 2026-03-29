@@ -35,3 +35,290 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+// NOTO SANS Font
+* {
+    font-family: 'Noto Sans' !important;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/Noto_Sans/static/NotoSans-Regular.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: url('assets/fonts/Noto_Sans/static/NotoSans-Bold.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: url('assets/fonts/Noto_Sans/static/NotoSans-Italic.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: url('assets/fonts/Noto_Sans/static/NotoSans-BoldItalic.ttf');
+}
+
+// TOOLBAR - LIGHT Mode ---------------------------------------------------------
+
+ion-toolbar {
+    --background: #78432c !important;
+    --color: #fdf6f0 !important;
+
+    ion-button {
+        --color: #fdf6f0;
+    }
+
+    ion-menu-button {
+        --color: #fdf6f0;
+    }
+}
+
+// TOOLBAR - DAKR Mode -----------------------------------------------------------
+
+ion-toolbar {
+    --background: #261214 !important;
+    --color: #d1a38a !important;
+
+    ion-button {
+        --color: #d1a38a;
+    }
+
+    ion-menu-button {
+        --color: #d1a38a;
+    }
+}
+
+.in-toolbar:not(.ion-color):not(.in-toolbar-color) .button-native {
+    color: #fdf6f0;
+}
+
+.ion-palette-dark .in-toolbar:not(.ion-color):not(.in-toolbar-color) .button-native {
+    color: #d1a38a;
+}
+
+// SIDE MENU - Light Mode -----------------------------------------------------------
+
+ion-menu {
+    ion-header ion-toolbar {
+        --background: #78432c !important;
+        --color: #fdf6f0 !important;
+
+        ion-title {color: #fdf6f0; font-weight: 700; letter-spacing: 0.03em;}
+        ion-button { --color: #fdf6f0}
+    }
+
+    ion-content {
+        --background: #fdf6f0;
+    }
+
+    ion-item {
+        --background: transparent;
+        --color: #261214;
+        --border-color: rgba(181, 117, 74, 0.25);
+        --ripple-color: rgba(181, 117, 74, 0.15);
+
+        ion-icon { color: #b5754a; }
+
+    }&:hover {
+        --background: #fdf6f0;
+        ion-icon { color: #b5754a; }
+    }
+
+    ion-footer {
+        background: #fdf6f0; 
+        border-top: 1px solid rgba(181, 117, 74, 0.15);
+
+        .model-label { color: #261214; }
+        .mode-icon { color: #78432c }
+        small { color: #b5754a }
+
+        ion-toggle {
+            --track-background: #d1a38a;
+            --track-background-checked: #b5754a;
+            --handle-background: #f1d1d4;
+            --handle-background-checked: #f1dfd4;
+            --border-radius: 1rem;
+        }
+    }
+}
+
+// SIDE MENU - Dark Mode -----------------------------------------------------------
+
+.ion-palette-dark ion-menu {
+    ion-header ion-toolbar {
+        --background: #261214 !important;
+        --color: #d1a38a !important;
+
+        ion-title {color: #d1a38a; font-weight: 700; letter-spacing: 0.03em;}
+        ion-button { --color: #d1a38a}
+    }
+
+    ion-content {
+        --background: #261214;
+    }
+
+    ion-item {
+        --background: transparent;
+        --color: #f5e6dc;
+        --border-color: rgba(181, 117, 74, 0.30);
+        --ripple-color: #4d2c29;
+
+        ion-icon { color: #b5754a; }
+    }&:hover {
+        --background: #4d2c29;
+        ion-icon {
+            color: #d1a38a;
+        }
+    }
+
+    ion-footer {
+        background: #261214; 
+        border-top: 1px solid #4d2c29;
+
+        .model-label { color: #f5e6dc; }
+        .mode-icon { color: #d1a38a; }
+        small { color: #78432c; }
+
+        ion-toggle {
+            --track-background: #4d2c29;
+            --track-background-checked: #78432c;
+            --handle-background: #d1a38a;
+            --handle-background-checked: #d1a38a;
+            --border-radius: 1rem;
+        }
+    }
+}
+
+// DISCOVER LIST ITEM DESCRIPTION -- DARK MODE ------------------------------------------
+
+:root.ion-palette-dark app-discover ion-label p, 
+:root.ion-palette-dark app-discover .sc-ion-label-ios-s > p,
+:root.ion-palatte-dark app-discover .sc-ion-label-md-s > p {
+    color: #d1a38a !important;
+}
+
+// AUTH PAGE: STRIP IONIC's NATIVE WHOTE INPUT BACKGROUND -------------------------------
+
+app-auth ion-input {
+    --background: transparent !important;
+    --padding-start: 12px !important;
+    --padding-end: 12px !important;
+}
+
+aap-auth ion-input input, 
+app-auth ion-input textarea {
+    background: transparent !important;
+    color: #f1dfd4 !important;
+    caret-color: #d1a38a !important;
+}
+
+app-auth ion-input::part(native) {
+    background: transparent !important;
+    color: #f1dfd4 !important;
+    caret-color: #d1a38a !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+}
+
+app-auth ion-input input,
+app-auth ion-input textarea,
+app-auth ion-input .native-input,
+app-auth ion-input .native-textarea {
+    background: transparent !important;
+    border: o !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 0.75rem;
+    padding-right: 0.7rem;
+}
+
+// Override browser autofill paint that forces light/dark internal backgrounds /
+
+app-auth ion-input input:-webkit-autofill, 
+app-auth ion-input input:-webkit-autofill:hover, 
+app-auth ion-input input:-webkit-autofill:focus, 
+app-auth ion-input textarea:-webkit-autofill, 
+app-auth ion-input textarea:-webkit-autofill, 
+app-auth ion-input textarea:-webkit-autofill {
+    -webkit-text-fill-color: #f1dfd4 !important;
+    caret-color: #d1a38a !important;
+    transition: background-color 9999s ease-in-out 0s !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow:  0 0 0 1000px transparent inset !important;
+    border: 0 !important;
+}
+
+ion-modal.content-fit-modal {
+    --width: min( 92vw, 420px );
+    --height: fit-content;
+    --max-height: 80vh;
+    --border-radius: 16px;
+}
+
+ion-modal.content-fit-modal::part(content) {
+    height: auto;
+}
+
+ion-modal.content-fit-modal .ion-page {
+    position: relative;
+    display: block;
+    contain: content;
+}
+
+// DISCOVER FESTURED CARD THEME OVERRIDES
+
+app-discover .featured-card ion-card-title {
+    color: #261214 !important;
+}
+
+app-discover .featured-card ion-card-subtitle,
+app-discover .featured-card ion-card-content,
+app-discover .featured-card ion-card-content p {
+    color: #4d2c29 !important;
+}
+
+.ion-palette-dark app-discover .featured-card {
+    --background: #261214 !important;
+}
+
+.ion-palette-dark app-discover .featured-card ion-card-title,
+.ion-palette-dark app-discover .featured-card ion-card-subtitle {
+    color: #f1dfd4 !important;
+}
+
+.ion-palatte-dark app-discover .featured-card ion-card-content, 
+.ion-palette-dark app-discover .featured-card ion-card-content p {
+    color: #d1a38a !important;
+}
+
+.ion-palatte-dark app-discover .featured-card .view-more-btn {
+    --color: #f1dfd4 !important; 
+}
+
+:root.ion-palatte-dark app-discover .featured-card ion-label p,
+:root.ion-palatte-dark app-discover .featured-card .sc-ion-label-ios-s > p,
+:root.ion-palatte-dark app-discover .featured-card .sc-ion-label-md-s > p {
+    color: #d1a38a !important;
+}
+
+
+
+
+
+
