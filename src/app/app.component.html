@@ -2,7 +2,10 @@
   <ion-menu side="start" contentId="main-content">
     <ion-header>
       <ion-toolbar>
-        <ion-title class="ion-text-start">Book My Place</ion-title>
+        <ion-title class="ion-text-start">
+          <img src="../assets/imgs/logo/terra-trail-logo.svg" alt="TerraTrail" class="app-title-logo">
+          TerraTrail
+        </ion-title>
         <ion-button slot="end" fill="clear" (click)="closeMenu()">
           <ion-icon name="close-outline"></ion-icon>
         </ion-button>
@@ -18,20 +21,14 @@
         </ion-menu-toggle>
         <ion-menu-toggle contentId="main-content">
           <ion-item lines="none" routerLink="/bookings">
-            <ion-icon name="bookmarks-outline" slot="start" color="warning"></ion-icon>
-            <ion-label>My Bookings</ion-label>
+            <ion-icon name="bookmarks" slot="start" color="warning"></ion-icon>
+            <ion-label>Bookings</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle contentId="main-content">
-          <ion-item lines="none" routerLink="/pictures">
-            <ion-icon name="image-outline" slot="start" color="warning"></ion-icon>
-            <ion-label>Pictures</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-        <ion-menu-toggle contentId="main-content">
-          <ion-item lines="none" routerLink="/locations">
-            <ion-icon name="navigate-outline" slot="start" color="warning"></ion-icon>
-            <ion-label>Locations</ion-label>
+          <ion-item lines="none" routerLink="/users">
+            <ion-icon name="people" slot="start" color="warning"></ion-icon>
+            <ion-label>Users</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle contentId="main-content">
@@ -42,6 +39,26 @@
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
+    <ion-footer>
+      <div class="footer-row">
+        <div class="model-label">
+          <ion-icon [name]="isDarkMode ? 'moon' : 'sunny-outline'" class="mode-icon"></ion-icon>
+          <span> {{ isDarkMode? 'Dark' : 'Light' }} Mode </span>
+        </div>
+      </div>
+
+      <small>v1.0.0</small>
+    </ion-footer>
   </ion-menu>
   <ion-router-outlet></ion-router-outlet>
+
+  <div class="brand-splash" *ngIf="showSplash">
+    <div class="brand-splash__glow"></div>
+    <div class="brand-splash__content">
+      <img src="../assets/imgs/logo/terra-trail-logo.svg" alt="TerraTrail logo" class="brand-splash__logo">
+      <h1> {{ splashTitle }} </h1>
+      <p class="brand-splash__tagline"> {{ splashTagline }} </p>
+      <p class="brand-splash__tagline"> {{ splashSubTagline }} </p>
+    </div>
+  </div>
 </ion-app>
